@@ -1,0 +1,27 @@
+farmacia type
+#3B82F6
+#60A5FA
+#1E3A8A
+#EFF6FF
+
+morado
+
+#A855F7
+#D8B4FE
+#F5F3FF
+#1E293B
+
+mrdo-nrja
+
+#2f2a26
+#fff8f0
+#4a306d
+#ffd166
+#eadfd3
+#e76f51
+#fffdfa
+#c9bfd6
+#c4553a
+
+rgba(255,255,255,0.15)
+white
