@@ -1,0 +1,217 @@
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Cuerpo y espacios ---------- */
+body {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  color: #2f2a26;
+  background-color: #fff8f0;
+  line-height: 1.4;
+}
+
+h2 { margin-bottom: 14px; color: #4a306d; }
+h3 { margin: 10px 0 4px; color: #4a306d; }
+p  { margin-bottom: 6px; }
+
+/* ---------- Encabezado y menú (Flexbox) ---------- */
+header {
+  background-color: #50306d;
+  color: white;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* selector descendiente: solo el h1 que está dentro del header */
+header h1::before {
+  content: "🌿🌿";
+}
+
+header nav {
+  display: flex;
+  gap: 10px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* pseudoclase :hover */
+header nav a:hover {
+  background-color: #ffd166;
+  color: #4a306d;
+}
+
+/* ---------- Contenido principal y secciones ---------- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  background-color: white;
+  border: 1px solid #eadfd3;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+/* selector de ID (va debajo de section a propósito, ver experimento 3.9) */
+#visita {
+  border: 2px solid #e76f51;
+}
+
+/* ---------- Galería de mascotas (Grid) ---------- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* selector de clase */
+.tarjeta {
+  background-color: #fffdfa;
+  border: 1px solid #eadfd3;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta:hover {
+  border-color: #e76f51;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 8px;
+}
+
+/* el botón siempre queda al fondo de la tarjeta */
+.tarjeta button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* ---------- Lista "Cómo adoptar" ---------- */
+#proceso ol {
+  padding-left: 24px;
+  line-height: 1.7;
+}
+
+/* ---------- Formulario (Flexbox) ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 420px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input {
+  padding: 9px;
+  border: 1px solid #c9bfd6;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+form input:focus {
+  outline: 2px solid #e76f51;
+  border-color: #e76f51;
+}
+
+form button {
+  align-self: flex-start;
+}
+
+/* ---------- Botones ---------- */
+button {
+  margin-top: 8px;
+  padding: 9px 18px;
+  background-color: #e76f51;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+}
+
+button:hover {
+  background-color: #c4553a;
+}
+
+/* ---------- Pie de página ---------- */
+footer {
+  background-color: #4a306d;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  font-size: 0.9em;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+.tarjeta-solicitada {
+  border-color: #ff8f00;
+  background-color: #fff8e1;
+}
+
+.estado {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.mensaje-ok {
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+/* ==========================================
+   Diseño responsivo (siempre al final)
+   ========================================== */
+
+/* Tablet: 2 columnas */
+@media (max-width: 900px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Celular: 1 columna y menú debajo del título */
+@media (max-width: 600px) {
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav {
+    flex-wrap: wrap;
+  }
+}
